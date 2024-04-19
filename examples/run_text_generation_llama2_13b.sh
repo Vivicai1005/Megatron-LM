@@ -23,6 +23,7 @@ torchrun $DISTRIBUTED_ARGS tools/run_text_generation_server.py   \
        --no-load-optim \
        --no-load-rng \
        --bf16 \
+       --attention-softmax-in-fp32 \
        --untie-embeddings-and-output-weights \
        --use-rotary-position-embeddings \
        --normalization RMSNorm \
