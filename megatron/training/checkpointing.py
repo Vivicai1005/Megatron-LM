@@ -714,6 +714,7 @@ def load_checkpoint(model, optimizer, opt_param_scheduler, load_arg='load', stri
 
     # Model.
     strict = False if args.retro_add_retriever else strict
+    import ipdb;ipdb.set_trace()
     if len(model) == 1:
         model[0].load_state_dict(state_dict['model'], strict=strict)
     else:
