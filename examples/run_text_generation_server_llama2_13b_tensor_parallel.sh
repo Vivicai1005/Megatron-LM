@@ -23,7 +23,7 @@ python -m torch.distributed.launch $DISTRIBUTED_ARGS tools/run_text_generation_s
        --use-checkpoint-args \
        --no-load-optim \
        --no-load-rng \
-       --fp16 \
+       --bf16 \
        --untie-embeddings-and-output-weights \
        --use-rotary-position-embeddings \
        --normalization RMSNorm \
