@@ -28,6 +28,7 @@ from typing import Union
 import megatron
 
 
+
 def model_provider(pre_process=True, post_process=True) -> Union[GPTModel, megatron.legacy.model.GPTModel]:
     """Builds the model.
 

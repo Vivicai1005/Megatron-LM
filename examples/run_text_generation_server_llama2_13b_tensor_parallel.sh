@@ -1,11 +1,12 @@
 #!/bin/bash
 export CUDA_DEVICE_MAX_CONNECTIONS=1
 # This example will start serving the 345M model that is partitioned 8 way tensor parallel
-DISTRIBUTED_ARGS="--nproc-per-node 4 \
+DISTRIBUTED_ARGS="--nproc_per_node 4 \
                   --nnodes 1 \
-                  --node-rank 0 \
-                  --master-addr localhost \
-                  --master-port 6000"
+                  --node_rank 0 \
+                  --master_addr localhost \
+                  --master_port 6000 \
+                  --use_env"
 
 TOKENIZER_MODEL=/data/tigerbot/tigerbot_geely/test/cw/models/tigerbot-13b-chat-sofya-8k-v3-hf-1100-st-for-tgi/tokenizer.model
 CHECKPOINT_DIR=/data/tigerbot/tigerbot_geely/test/cw/models/tigerbot-13b-chat-sofya-8k-v3-4tp
