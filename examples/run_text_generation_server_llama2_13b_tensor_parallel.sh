@@ -22,7 +22,6 @@ torchrun $DISTRIBUTED_ARGS tools/run_text_generation_server.py   \
        --use-checkpoint-args \
        --no-load-optim \
        --no-load-rng \
-       --bf16 \
        --untie-embeddings-and-output-weights \
        --use-rotary-position-embeddings \
        --normalization RMSNorm \
