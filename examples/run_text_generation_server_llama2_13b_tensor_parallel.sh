@@ -29,4 +29,5 @@ torchrun $DISTRIBUTED_ARGS tools/run_text_generation_server.py   \
        --normalization RMSNorm \
        --no-position-embedding \
        --no-masked-softmax-fusion \
-       --micro-batch-size 1
+       --micro-batch-size 1 \
+       --use_mcore_models
