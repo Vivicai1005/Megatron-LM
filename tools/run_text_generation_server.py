@@ -111,7 +111,6 @@ if __name__ == "__main__":
     args.exit_on_missing_checkpoint = True
     # Set up model and load checkpoint
     model = get_model(model_provider, wrap_with_ddp=False)
-    import ipdb;ipdb.set_trace()
     if args.load is not None:
         _ = load_checkpoint(model, None, None)
 
