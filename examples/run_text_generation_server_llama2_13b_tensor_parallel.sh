@@ -5,8 +5,7 @@ DISTRIBUTED_ARGS="--nproc_per_node 4 \
                   --nnodes 1 \
                   --node_rank 0 \
                   --master_addr localhost \
-                  --master_port 6000 \
-                  --use_env"
+                  --master_port 6000"
 
 TOKENIZER_MODEL=/data/tigerbot/tigerbot_geely/test/cw/models/tigerbot-13b-chat-sofya-8k-v3-hf-1100-st-for-tgi/tokenizer.model
 CHECKPOINT_DIR=/data/tigerbot/tigerbot_geely/test/cw/models/tigerbot-13b-chat-sofya-8k-v3-4tp
