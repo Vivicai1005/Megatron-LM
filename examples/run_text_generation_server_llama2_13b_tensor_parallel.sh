@@ -22,7 +22,8 @@ torchrun $DISTRIBUTED_ARGS tools/run_text_generation_server.py   \
        --use-checkpoint-args \
        --no-load-optim \
        --no-load-rng \
-       --fp32 \
+       --bf16 \
+       --attention-softmax-in-fp32 \
        --untie-embeddings-and-output-weights \
        --use-rotary-position-embeddings \
        --normalization RMSNorm \
