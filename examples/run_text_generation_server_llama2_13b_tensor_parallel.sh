@@ -11,7 +11,7 @@ DISTRIBUTED_ARGS="--nproc_per_node 4 \
 TOKENIZER_MODEL=/data/tigerbot/tigerbot_geely/test/cw/models/tigerbot-13b-chat-sofya-8k-v3-hf-1100-st-for-tgi/tokenizer.model
 CHECKPOINT_DIR=/data/tigerbot/tigerbot_geely/test/cw/models/tigerbot-13b-chat-sofya-8k-v3-4tp
 
-python -m torch.distributed.launch $DISTRIBUTED_ARGS tools/run_text_generation_server.py   \
+torchrun $DISTRIBUTED_ARGS tools/run_text_generation_server.py   \
        --tensor-model-parallel-size 4 \
        --pipeline-model-parallel-size 1 \
        --seq-length 4096 \
