@@ -21,7 +21,6 @@ python -m torch.distributed.launch $DISTRIBUTED_ARGS tools/run_text_generation_s
        --num-attention-heads 16  \
        --max-position-embeddings 1024  \
        --tokenizer-type GPT2BPETokenizer  \
-       --fp16  \
        --micro-batch-size 1  \
        --seq-length 1024  \
        --vocab-file $VOCAB_FILE  \
