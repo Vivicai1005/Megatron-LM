@@ -99,8 +99,11 @@ class Encoder(object):
                     doc_ids.extend(sentence_ids)
                     sentence_lens.append(len(sentence_ids))
             if len(doc_ids) > 0 and self.args.append_eod:
-                print(Encoder.tokenizer.eod)
-                doc_ids.append(Encoder.tokenizer.eod)
+                if self.args.eos_token_id:
+                    doc_ids.append(self.args.eos_token_id)
+                else:
+                    doc_ids.append(Encoder.tokenizer.eod)
+                print(doc_ids[-1])
                 sentence_lens[-1] += 1
             ids[key] = doc_ids
             lens[key] = sentence_lens
@@ -150,8 +153,6 @@ class Partition(object):
         startup_start = time.time()
         encoder = Encoder(self.args)
         tokenizer = build_tokenizer(self.args)
-        if self.args.eos_token_id:
-            tokenizer.eod = self.args.eos_token_id
         pool = multiprocessing.Pool(self.workers, initializer=encoder.initializer)
         encoded_docs = pool.imap(encoder.encode, fin, 32)
 
