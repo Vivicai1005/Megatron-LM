@@ -11,6 +11,7 @@ TOKENIZER_MODEL=/data/tigerbot/tigerbot_geely/test/cw/models/tigerbot-13b-chat-s
 CHECKPOINT_DIR=/data/tigerbot/tigerbot_geely/test/cw/models/tigerbot-13b-chat-sofya-8k-v3-1tp
 
 torchrun $DISTRIBUTED_ARGS tools/run_text_generation_server.py   \
+       --transformer-impl local \
        --tensor-model-parallel-size 1 \
        --pipeline-model-parallel-size 1 \
        --seq-length 4096 \
@@ -30,4 +31,3 @@ torchrun $DISTRIBUTED_ARGS tools/run_text_generation_server.py   \
        --no-position-embedding \
        --no-masked-softmax-fusion \
        --micro-batch-size 1  \
-       --transformer-impl local

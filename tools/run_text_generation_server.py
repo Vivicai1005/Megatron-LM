@@ -45,7 +45,6 @@ def model_provider(pre_process=True, post_process=True) -> Union[GPTModel, megat
 
     args = get_args()
     use_te = args.transformer_impl == "transformer_engine"
-    import ipdb;ipdb.set_trace()
 
     print_rank_0('building GPT model ...')
 
