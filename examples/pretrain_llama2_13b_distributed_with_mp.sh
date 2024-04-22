@@ -85,5 +85,6 @@ torchrun $DISTRIBUTED_ARGS pretrain_gpt.py \
     --bf16 \
     --recompute-activations \
     --recompute-granularity selective \
+    --attention-softmax-in-fp32 \
     --use-flash-attn
 
