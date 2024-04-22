@@ -150,6 +150,8 @@ class Partition(object):
         startup_start = time.time()
         encoder = Encoder(self.args)
         tokenizer = build_tokenizer(self.args)
+        if self.args.eos_token_id:
+            tokenizer.eod = self.args.eos_token_id
         pool = multiprocessing.Pool(self.workers, initializer=encoder.initializer)
         encoded_docs = pool.imap(encoder.encode, fin, 32)
 
@@ -232,6 +234,8 @@ def get_args():
     group.add_argument('--keep-sequential-samples', action='store_true',
                        help='Ensure ordering of samples in .jsonl files is '
                             'preserved when using partitions>1.')
+    group.add_argument('--eos-token-id', type=int, default=2,
+                       help='Id of model response token. Token after which will not contribute to final loss')
     args = parser.parse_args()
     args.keep_empty = False
 
