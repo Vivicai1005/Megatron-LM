@@ -30,4 +30,4 @@ torchrun $DISTRIBUTED_ARGS tools/run_text_generation_server.py   \
        --no-position-embedding \
        --no-masked-softmax-fusion \
        --micro-batch-size 1  \
-       --transformer-impl local 
+       --transformer-impl local
