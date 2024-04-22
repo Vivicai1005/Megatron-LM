@@ -45,7 +45,8 @@ GPT_ARGS="
     --adam-beta2 0.95 \
     --clip-grad 1.0 \
     --weight-decay 0.1 \
-    --no-gradient-accumulation-fusion
+    --no-gradient-accumulation-fusion \
+    --transformer-impl local
 "
 
 DATA_ARGS="
