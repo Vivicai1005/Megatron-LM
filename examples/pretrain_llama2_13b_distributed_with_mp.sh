@@ -87,5 +87,6 @@ torchrun $DISTRIBUTED_ARGS pretrain_gpt.py \
     --recompute-activations \
     --recompute-granularity selective \
     --attention-softmax-in-fp32 \
-    --use-flash-attn
+    --use-flash-attn \
+    --eod-mask-loss
 
