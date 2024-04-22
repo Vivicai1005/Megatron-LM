@@ -44,6 +44,8 @@ def model_provider(pre_process=True, post_process=True) -> Union[GPTModel, megat
         """
 
     args = get_args()
+    print(args.transformer_engine)
+    args.transformer_impl = "local"
     use_te = args.transformer_impl == "transformer_engine"
 
     print_rank_0('building GPT model ...')
