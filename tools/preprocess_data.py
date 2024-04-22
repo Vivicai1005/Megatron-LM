@@ -103,7 +103,6 @@ class Encoder(object):
                     doc_ids.append(self.args.eos_token_id)
                 else:
                     doc_ids.append(Encoder.tokenizer.eod)
-                print(doc_ids[-1])
                 sentence_lens[-1] += 1
             ids[key] = doc_ids
             lens[key] = sentence_lens
