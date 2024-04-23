@@ -38,7 +38,7 @@ from transformers import LlamaConfig, LlamaForCausalLM, LlamaTokenizerFast, Falc
 
 from utils.permute_qkv import permute_qkv
 
-from megatron.tokenizer import build_tokenizer
+from megatron.training.tokenizer import build_tokenizer
 
 
 def write_json(text, path):
