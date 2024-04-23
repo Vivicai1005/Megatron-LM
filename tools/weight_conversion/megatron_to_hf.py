@@ -142,9 +142,9 @@ def write_llama_model(model_path,
                 f"model.layers.{layer_i}.mlp.down_proj.weight": loaded["transformer"][
                     f"layers.{layer_i}.mlp.dense_4h_to_h.weight"],
                 f"model.layers.{layer_i}.mlp.up_proj.weight": ffn_w3,
-                f"model.layers.{layer_i}.input_norm.weight": loaded["transformer"][
+                f"model.layers.{layer_i}.input_layernorm.weight": loaded["transformer"][
                     f"layers.{layer_i}.input_norm.weight"],
-                f"model.layers.{layer_i}.post_attention_norm.weight": loaded["transformer"][
+                f"model.layers.{layer_i}.post_attention_layernorm.weight": loaded["transformer"][
                     f"layers.{layer_i}.post_attention_norm.weight"],
                 f"model.layers.{layer_i}.self_attn.rotary_emb.inv_freq": inv_freq
             }
