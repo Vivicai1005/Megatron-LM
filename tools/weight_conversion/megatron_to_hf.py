@@ -158,7 +158,7 @@ def write_llama_model(model_path,
         filename = f"pytorch_model-{n_layers + 1}-of-{n_layers + 1}.bin"
         state_dict = {
             "model.norm.weight": loaded["transformer"]['final_norm.weight'],
-            "lm_head.weight": loaded['lm_head'],
+            "lm_head.weight": loaded['output_layer.weight'],
             "model.embed_tokens.weight": loaded['embedding']["word_embeddings.weight"]
         }
 
