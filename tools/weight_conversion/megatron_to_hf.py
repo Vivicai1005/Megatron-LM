@@ -156,10 +156,9 @@ def write_llama_model(model_path,
             print(f'Sharded file saved to {filename}')
 
         filename = f"pytorch_model-{n_layers + 1}-of-{n_layers + 1}.bin"
-        import ipdb;ipdb.set_trace()
         state_dict = {
             "model.norm.weight": loaded["transformer"]['final_norm.weight'],
-            "lm_head.weight": loaded['output_layer.weight'],
+            "lm_head.weight": loaded['output_layer']["weight"],
             "model.embed_tokens.weight": loaded['embedding']["word_embeddings.weight"]
         }
 
